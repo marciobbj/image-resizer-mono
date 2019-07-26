@@ -1,7 +1,6 @@
 version: "3.3"
 
 volumes:
-  postgres_data: {}
   rabbitmq_data: {}
 
 services:
