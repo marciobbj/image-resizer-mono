@@ -26,4 +26,4 @@ Basically:
 - Back-end will save this file instance.
 - Back-end then sends the file to the RabbitMQ and celery does the "resize_job" asynchronously.
 - While this job is in progress the front-end will check every 2 seconds whether the "job_done" property is true. "job_done" can be fetched @`images/{job_id}/` endpoint in the API.
-- If job is done the frontend will then catch the resized image url and show a download buttom.
+- If job is done the frontend will then catch the resized image url and show a download button.
