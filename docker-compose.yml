@@ -4,7 +4,7 @@ volumes:
   rabbitmq_data: {}
 
 services:
-  back-end:
+  image-resizer-api:
     build:
       context: ./image-resizer-api
     volumes:
@@ -13,9 +13,9 @@ services:
     ports:
       - "8000:8000"
     restart: on-failure
-  front-end:
-    image: node:8
-    command: npm run start
+  image-resizer-front:
+    image: node:11
+    command: yarn serve
     ports:
       - "8080:8080"
     volumes:
@@ -31,7 +31,7 @@ services:
       - rabbitmq_data:/var/lib/rabbitmq/data
   celery:
     build:
-      context: back-end
+      context: image-resizer-api
       dockerfile: Dockerfile
     command: celery -A image worker -c 4 -l info
     volumes:
