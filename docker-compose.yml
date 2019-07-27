@@ -1,5 +1,11 @@
 version: "3.3"
 
+# O container do NGINX seria para uma versão de produção,
+# no arquivo de configuração já foram configuradas as proxies
+# para as calls de URL que são passadas para o back e o front.
+# aqui eu vou subir o front e o back separadamente e expor
+# ambas portas 8000 e 8080 do ambiente local.
+
 volumes:
   rabbitmq_data: {}
 
@@ -38,3 +44,15 @@ services:
       - ./image-resizer-api:/app
     depends_on:
       - image-resizer-api
+  #nginx:
+  #  build:
+  #    context: .
+  #    dockerfile: nginx/Dockerfile
+  #  ports:
+  #    - "8000:80"
+  #  depends_on:
+  #    - image-resizer-api
+  #  volumes:
+  #    - ./image-resizer-api/media/:/media/
+  #    - ./image-resizer-api/static/:/static/
+  #    - ./nginx/prod.conf:/etc/nginx/nginx.conf:ro
