@@ -13,7 +13,7 @@ WORKDIR /app/image-resizer-front
 # ref: https://github.com/nvm-sh/nvm
 
 COPY image-resizer-front/package.json /app/image-resizer-front/
-RUN npm install
+RUN yarn install
 
 # Em produção essa linha é sem comentários
 # COPY image-resizer-front /app/image-resizer-front/

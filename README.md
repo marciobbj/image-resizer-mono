@@ -6,8 +6,10 @@
 ##### How to run:
 - Clone the repo.
 - Use the command `git submodule update --init --recursive` to get the frontend and backend.
+- Inside `image-resizer-api` checkout master with `git checkout master`, the same for the `image-resizer-front`
 - Install docker-compose in your environment with pip.
 - Go to `ìmage-resizer-api` folder and change the permission of `boot.sh` file with the command `sudo chmod +x boot.sh`.
+- use `pip install docker-compose`
 - Use `docker-compose build` and `docker-compose up`
 
 Both containers front-end and back-end are running @`http://localhost:8080` @`http://localhost:8000` respectively.

@@ -21,7 +21,7 @@ services:
     restart: on-failure
   image-resizer-front:
     image: node:11
-    command: yarn serve
+    command: npm run serve
     ports:
       - "8080:8080"
     volumes:
@@ -44,15 +44,15 @@ services:
       - ./image-resizer-api:/app
     depends_on:
       - image-resizer-api
-  #nginx:
-  #  build:
-  #    context: .
-  #    dockerfile: nginx/Dockerfile
-  #  ports:
-  #    - "8000:80"
-  #  depends_on:
-  #    - image-resizer-api
-  #  volumes:
-  #    - ./image-resizer-api/media/:/media/
-  #    - ./image-resizer-api/static/:/static/
-  #    - ./nginx/prod.conf:/etc/nginx/nginx.conf:ro
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+    ports:
+      - "8000:80"
+    depends_on:
+      - image-resizer-api
+    volumes:
+      - ./image-resizer-api/media/:/media/
+      - ./image-resizer-api/static/:/static/
+      - ./nginx/prod.conf:/etc/nginx/nginx.conf:ro
