@@ -17,7 +17,7 @@
 - Use `pip install docker-compose`.
 - Use `docker-compose build` and `docker-compose up`
 
-Both containers front-end and back-end are running @`http://localhost:8080` @`http://localhost:8000` respectively.
+Both containers front-end and back-end are running @`http://localhost:8080` @`http://localhost:8000` respectively. Check the front-end to test the application.
 
 ---
 
