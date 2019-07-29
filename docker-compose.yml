@@ -16,14 +16,10 @@ services:
     volumes:
       - ./image-resizer-api:/app
     command: /boot.sh
-    ports:
-      - "8000:8000"
     restart: on-failure
   image-resizer-front:
     image: node:11
     command: yarn serve
-    ports:
-      - "8080:8080"
     volumes:
       - ./image-resizer-front:/app
     working_dir: /app
@@ -44,3 +40,13 @@ services:
       - ./image-resizer-api:/app
     depends_on:
       - image-resizer-api
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8000:80"
+    depends_on:
+      - image-resizer-api
+    volumes:
+      - ./image-resizer-api/media/:/media/
+      - ./image-resizer-api/static/:/static/
+      - ./nginx/dev.conf:/etc/nginx/nginx.conf
