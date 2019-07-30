@@ -1,6 +1,6 @@
 [submodule "image-resizer-front"]
 	path = image-resizer-front
-	url = git@github.com:marciobbj/image-resizer-front.git
+	url = https://github.com/marciobbj/image-resizer-front.git
 [submodule "image-resizer-api"]
 	path = image-resizer-api
-	url = git@github.com:marciobbj/image-resizer-api.git
+	url = https://github.com/marciobbj/image-resizer-api.git

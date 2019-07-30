@@ -17,13 +17,6 @@ services:
       - ./image-resizer-api:/app
     command: /boot.sh
     restart: on-failure
-  image-resizer-front:
-    image: node:11
-    command: yarn serve
-    volumes:
-      - ./image-resizer-front:/app
-    working_dir: /app
-    restart: on-failure
   rabbitmq:
     image: rabbitmq:latest
     ports:
@@ -43,7 +36,10 @@ services:
   nginx:
     image: nginx:alpine
     ports:
-      - "8000:80"
+      - "80:80"
+    build:
+      context: .
+      dockerfile: ./nginx/Dockerfile
     depends_on:
       - image-resizer-api
     volumes:
