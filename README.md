@@ -1,5 +1,8 @@
 ### Image resizer web app
 
+##### Checkout the live version
+- http://ec2-3-86-86-236.compute-1.amazonaws.com
+
 ##### Requirements:
 
 - Python 3.6.5
