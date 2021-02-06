@@ -1,7 +1,7 @@
 ### Image resizer web app
 
-##### Checkout the live version
-- http://ec2-3-86-86-236.compute-1.amazonaws.com
+##### Checkout the live version (DEPRECATED)
+- ~~http://ec2-3-86-86-236.compute-1.amazonaws.com~~
 
 ##### Requirements:
 
